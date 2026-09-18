@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retro Zombie Assault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <div class="grain"></div>
+    <section id="menu" class="screen menu-screen active">
+      <div class="menu-mark">☣</div>
+      <p class="eyebrow">SURVIVAL // SECTOR 09</p>
+      <h1>RETRO <span>ZOMBIE</span><br>ASSAULT</h1>
+      <p class="tagline">HOLD THE LINE. OUTLIVE THE DEAD.</p>
+      <div class="menu-actions">
+        <button class="arcade-btn primary" id="startBtn">START GAME</button>
+        <button class="arcade-btn" id="controlsBtn">CONTROLS</button>
+        <button class="arcade-btn" id="creditsBtn">CREDITS</button>
+      </div>
+      <p id="menuInfo" class="menu-info">WASD / ARROWS TO MOVE · SPACE / CLICK TO FIRE · R TO RELOAD</p>
+    </section>
+
+    <section id="game" class="screen game-screen">
+      <header class="hud">
+        <div class="hud-block mission"><span>SECTOR</span><strong id="levelText">01</strong><small id="waveText">WAVE 1 / 3</small></div>
+        <div class="hud-block score"><span>SCORE</span><strong id="scoreText">000000</strong></div>
+        <div class="hud-block xp"><span>XP</span><strong id="xpText">000</strong></div>
+        <div class="hud-block weapon"><span>ARMAMENT</span><strong id="weaponText">PISTOL</strong><small id="weaponSub">DMG 18 · 2.8 RPS</small></div>
+        <div class="hud-block ammo"><span>AMMO</span><strong id="ammoText">12 / 12</strong><small id="reloadText">READY</small></div>
+      </header>
+      <div id="bossHud" class="boss-hud hidden"><span>☠ MUTANT OVERLORD</span><div class="bar"><i id="bossBar"></i></div><b id="bossHp">0 / 0</b></div>
+      <div id="battlefield" class="battlefield" aria-label="Zombie battlefield">
+        <div class="moon"></div><div class="city city-a"></div><div class="city city-b"></div>
+        <div class="smoke smoke-a"></div><div class="smoke smoke-b"></div>
+        <div class="warning-sign">☣<small>QUARANTINE</small></div>
+        <div class="ground"><i></i><i></i><i></i><i></i><i></i></div>
+        <div id="entities"></div>
+        <div id="toast" class="toast"></div>
+      </div>
+      <footer class="lower-hud">
+        <div class="health-wrap"><span>VITALS</span><div class="bar health"><i id="healthBar"></i></div><b id="healthText">100 / 100</b></div>
+        <div class="reload-wrap"><span>MAG</span><div class="bar reload-bar"><i id="reloadBar"></i></div></div>
+        <button id="upgradeBtn" class="upgrade-btn">UPGRADE <span id="upgradeCost">150 XP</span></button>
+        <div class="help">MOVE <kbd>A</kbd><kbd>D</kbd> · FIRE <kbd>SPACE</kbd> · RELOAD <kbd>R</kbd></div>
+      </footer>
+    </section>
+
+    <section id="overlay" class="overlay">
+      <div class="panel">
+        <p id="overlayEyebrow" class="eyebrow">MISSION REPORT</p>
+        <h2 id="overlayTitle">LEVEL CLEARED!</h2>
+        <p id="overlayCopy">The sector is secure... for now.</p>
+        <div id="overlayStats" class="result-stats"></div>
+        <button id="overlayBtn" class="arcade-btn primary">NEXT LEVEL</button>
+        <button id="menuBtn" class="text-btn">RETURN TO MAIN MENU</button>
+      </div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
